@@ -23,3 +23,25 @@ All tracking data and compressed screenshots live in localStorage in the browser
 ## Development
 
 No build step or dependencies. Serve this directory with any static server. GitHub Pages deploys main at the repository root. Bump the cache version in sw.js whenever changing shell assets. An existing open client may need closing and reopening to activate an updated service worker.
+
+## Training plan
+
+- Monday: Upper A, about 60 minutes.
+- Tuesday: Lower A, about 60 minutes.
+- Wednesday: easy run/walk, 20–30 minutes.
+- Thursday: Upper B, about 60 minutes.
+- Friday: Lower B, about 60 minutes.
+- Saturday: easy run/walk, 20–30 minutes.
+- Sunday: recovery.
+
+Each strength session includes warm-up, sets/reps/rest cues, two-frame photo-loop demonstrations with pause controls, individual load/rep records, and a completion checklist. Beginning/returning lifters start with fewer sets. No fabricated working loads are calculated from age or body mass. Profile fields are optional and stored locally. Actual working load is selected through an effort-based practice set. This is a general adult exercise template, not an individually assessed medical prescription.
+
+## Media and sources
+
+Meal photos were generated for the four onion-free meals and are illustrative, not nutrition measurements. Exercise photo references are from https://github.com/yuhonas/free-exercise-db (public domain / Unlicense; see EXERCISE-LICENSE.md). Their start/end photo loops are not full-motion technique videos. Written cues were authored for this app; the source dataset instructions are not used as coaching prescriptions.
+
+General activity and running sources:
+- https://www.cdc.gov/physical-activity-basics/guidelines/adults.html
+- https://www.nhs.uk/better-health/get-active/get-running-with-couch-to-5k/couch-to-5k-running-plan/
+
+All images are bundled locally and cached for offline access. No third-party image requests are needed during use.
