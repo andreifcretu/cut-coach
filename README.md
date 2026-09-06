@@ -45,3 +45,9 @@ General activity and running sources:
 - https://www.nhs.uk/better-health/get-active/get-running-with-couch-to-5k/couch-to-5k-running-plan/
 
 All images are bundled locally and cached for offline access. No third-party image requests are needed during use.
+
+## Daily memory and coaching
+
+Save check-in persists the date's calories, protein, carbs, fat and activity. Today shows the three-macro breakdown and above/remaining calorie feedback. Progress includes weekly macro averages, data-based feedback and paginated history for every saved date. Historical calorie/protein comparisons use the target captured with that day's nutrition entry. Older entries without a target snapshot remain available but are excluded from historical target comparisons. Optional carb/fat targets can be set in Settings. Goal changes are user-reviewed; feedback updates automatically but calorie targets never silently change.
+
+Storage remains local to the device/browser; it is not cloud sync. Use Export backup for a separate copy. Clearing website data or losing the device can remove local entries.
