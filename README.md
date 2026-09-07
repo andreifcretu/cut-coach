@@ -6,16 +6,16 @@ A standalone PWA for daily nutrition totals, weight, waist, steps, workouts, mea
 
 Open https://andreifcretu.github.io/cut-coach/ in iPhone Safari. Tap Share (or More then Share), Add to Home Screen, enable Open as Web App if shown, then Add. Install before you start logging. Open Goals to enter your body details, choose your goal and preview estimated targets. Apply them when ready; Settings also supports manual targets.
 
-Daily: morning weigh-in, log meals in Cal AI, manually copy the running totals here, update steps and workout, then mark final totals at bedtime. Saving replaces a day's totals, preventing duplicate imports. Review weekly averages on Progress. Sunday: review and prepare meals.
+Daily: open Today or Log, choose Photo, Barcode or Add food, check the portion and nutrition, and save. Each food gets a time and updates daily calories, protein, carbs and fat. Log a morning weigh-in, use Train for your next session, and review Progress. Meals lets you log a planned dish or your saved whey label with one review step.
 
 ## Privacy and backups
 
-All tracking data and compressed screenshots live in localStorage in the browser on that device. No analytics, accounts or external API calls. GitHub serves public application code, not your entries. Clearing browser/site data can erase entries. Export JSON regularly in Settings; restoration validates the backup and asks for confirmation before replacement. CSV export is also available.
+All tracking records and optional reference screenshots live in localStorage in the browser on that device. No analytics or cloud diary account. Barcode lookup sends the barcode number to Open Food Facts. Photo analysis sends only the selected compressed photo and optional hint to your own Mac over private Tailscale HTTPS after you tap Analyze; the service processes it in memory and does not save it. GitHub serves public application code, not your entries. Clearing browser/site data can erase entries. Export JSON regularly in Settings; restoration validates the backup and asks for confirmation before replacement. CSV export is also available.
 
 ## Capabilities and limits
 
 - Offline app shell after one successful online load and service worker installation.
-- Manual Cal AI totals and screenshot reference attachment. No OCR or Cal AI/HealthKit sync.
+- Timestamped food diary with barcode and photo review, repeat foods, editable portions, deletion with undo, and automatic macro totals. Optional other-food totals and reference screenshots remain available; exclude foods already in the diary to avoid double counting. No Cal AI/HealthKit sync.
 - Seven-day averages use actual dated observations. Trend comparison requires at least three weights in each week. No automatic calorie reductions or predicted deadlines.
 - Meal nutrition is an estimate. Shopping quantities are approximate. Food storage guidance: https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts
 - Rebuilt from the prior conversation's requirements because its original ZIP download was blocked by Chrome. This is not an extraction of that ZIP.
@@ -81,3 +81,13 @@ References:
 - https://pmc.ncbi.nlm.nih.gov/articles/PMC5477153/
 - https://www.niddk.nih.gov/health-information/weight-management/body-weight-planner
 - https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures
+
+## Photo and barcode scanning
+
+Photo scanning uses your Mac's already-downloaded qwen3.5:9b vision model through Ollama. Your Mac must be awake and logged in, with Ollama available, and Tailscale must be connected on your iPhone. In Log → Photo → Private photo connection, use Check connection. Allow local-network access if the phone asks. The helper starts at Mac login and is exposed only within your private Tailscale network. It is not a public photo API.
+
+Choose a plate photo or a clear nutrition label. Tap Analyze on my Mac, then review the foods, portions and macros before Save food to diary. Results are estimates, particularly portions, oils and hidden ingredients. Unreadable label values remain blank and must be filled before saving. A scan is a draft, never an automatic claim of nutrition accuracy. Photos are not retained in the diary; only the reviewed entries are saved.
+
+Barcode supports live camera, barcode photos and typed digits. Internet access is required for product lookup. Product data comes from Open Food Facts (https://world.openfoodfacts.org/), made available under ODbL; check the current package and serving basis. Unknown products can be entered manually. Barcode decoding uses bundled @zxing/browser 0.2.1 (MIT; vendor/ZXING-LICENSE.txt), including on browsers without BarcodeDetector.
+
+Food records are included in JSON backups. Editing replaces the entry; moving an entry to another date updates both days. Daily other-food totals are kept separately and added once. Scanning and product lookup require their network connections, but saved history and manual logging work offline after the app is cached.
