@@ -91,3 +91,5 @@ Choose a plate photo or a clear nutrition label. Tap Analyze on my Mac, then rev
 Barcode supports live camera, barcode photos and typed digits. Internet access is required for product lookup. Product data comes from Open Food Facts (https://world.openfoodfacts.org/), made available under ODbL; check the current package and serving basis. Unknown products can be entered manually. Barcode decoding uses bundled @zxing/browser 0.2.1 (MIT; vendor/ZXING-LICENSE.txt), including on browsers without BarcodeDetector.
 
 Food records are included in JSON backups. Editing replaces the entry; moving an entry to another date updates both days. Daily other-food totals are kept separately and added once. Scanning and product lookup require their network connections, but saved history and manual logging work offline after the app is cached.
+
+All 24 menu recipes now have distinct generated food photographs, including every swap option. Optimized JPEGs are bundled and cached offline. Photos are illustrative; use recipe quantities and your actual portion for nutrition.
