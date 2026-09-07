@@ -26,13 +26,17 @@ No build step or dependencies. Serve this directory with any static server. GitH
 
 ## Training plan
 
-- Monday: Upper A, about 60 minutes.
-- Tuesday: Lower A, about 60 minutes.
-- Wednesday: easy run/walk, 20–30 minutes.
-- Thursday: Upper B, about 60 minutes.
-- Friday: Lower B, about 60 minutes.
-- Saturday: easy run/walk, 20–30 minutes.
-- Sunday: recovery.
+The calendar is a rolling sequence: Upper A → Lower A → easy run/walk → Upper B → Lower B → easy run/walk → recovery. Completing a session advances it; missed days do not. Recovery can extend this beyond seven days, so sessions are never crammed into a catch-up day.
+
+In Train, save your recovery check-in, log each working set (load, reps/seconds, optional reps in reserve and Done), tap Save sets, then Finish session. Change the date to backfill or correct an earlier session. Before logging sets, you can select a different session if that is what you actually did. Progress and Train show session details and direct/supporting muscle sets over seven days.
+
+Coaching uses conservative, explainable rules: leave an intervening calendar day for recently worked muscles, omit recent direct core work, reduce targets for moderate fatigue/soreness, pause for high soreness/pain/very low energy, and respect the lower of four or the user's weekly strength target. This is calendar-based guidance, not a precise 48-hour or biological recovery measurement. Recent lower-body work changes an aerobic recommendation to walking. Partial sets count for recovery even before the workout is finished.
+
+Load advice compares the same exercise only. Two logs at the same load with all target sets at the upper rep target and at least two reps in reserve qualify for a small optional increase of at most 5%. Unknown effort, different exercises, fatigue and long gaps do not trigger increases. Actual weights are never silently changed. The new/returning introduction uses two sets for the first eight finished strength sessions.
+
+Training is stored separately from nutrition check-ins; both are included in JSON backup/restore. Existing legacy logs are preserved without inferring uncertain sets or muscle identities. CSV exports daily check-ins only. No sensors, external workout sync, cloud service or autonomous model training are involved.
+
+Reference: https://acsm.org/resistance-training-guidelines-update-2026/ . Specific scheduling/progression rules above are app heuristics, not a clinical prescription or claims that ACSM endorsed this implementation.
 
 Each strength session includes warm-up, sets/reps/rest cues, two-frame photo-loop demonstrations with pause controls, individual load/rep records, and a completion checklist. Beginning/returning lifters start with fewer sets. No fabricated working loads are calculated from age or body mass. Profile fields are optional and stored locally. Actual working load is selected through an effort-based practice set. This is a general adult exercise template, not an individually assessed medical prescription.
 
