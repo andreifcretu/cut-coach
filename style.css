@@ -427,3 +427,177 @@ td .secondary { padding: 10px; font-size: 12px; }
   .meal-tile details summary { font-size: 12px; font-weight: 600; line-height: 1.5; padding: 9px 0; min-height: 44px; overflow-wrap: anywhere; }
   .meal-tile details p, .meal-tile-body .fine { font-size: 12px; line-height: 1.65; overflow-wrap: anywhere; }
 }
+
+/* Goal selection, personal targets, and the weekly food workspace. */
+.goals-hero { position: relative; overflow: hidden; background: radial-gradient(ellipse at 95% 0%, #507c9850, transparent 65%), linear-gradient(130deg, #20324d, #132335); border-color: #3f5a75; }
+.goals-hero h2 { font-size: 31px; letter-spacing: -.9px; margin: 13px 0; }
+.goals-hero > p { color: #c2d2e6; max-width: 65ch; }
+.goals-hero .eyebrow { color: #b7e5e4; }
+.goal-options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 20px 0; }
+.goal-options > button, .goal-options > label { min-width: 0; min-height: 104px; padding: 19px 16px; border: 1px solid #3a506b; border-radius: 17px; background: #132237; color: #d0def1; text-align: left; line-height: 1.4; font-size: 14px; font-weight: 650; margin: 0; }
+.goal-options > button[aria-pressed=true], .goal-options > button.active, .goal-options > label:has(input:checked) { background: #233f4d; border-color: #89c7c7; color: #daf8f2; box-shadow: inset 0 0 0 1px #89c7c740; }
+.goal-options strong, .goal-options b { display: block; font-size: 17px; font-weight: 650; line-height: 1.35; margin-bottom: 8px; }
+.goal-options small, .goal-options .fine { display: block; font-size: 12px; font-weight: 400; line-height: 1.6; color: #b3c3d9; margin-top: 6px; }
+.goal-options > button[aria-pressed=true] small, .goal-options > button.active small { color: #c5e5e3; }
+.goal-options svg { width: 23px; height: 23px; margin-bottom: 10px; display: block; }
+.goal-profile-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.goal-profile-grid > *, .calculator-results > *, .whey-grid > * { min-width: 0; }
+.goal-profile-grid .field { margin-bottom: 0; }
+.goal-profile-grid + .field, .goal-profile-grid + button { margin-top: 20px; }
+.field-help { color: var(--muted); font-size: 12px; line-height: 1.65; margin: 8px 0 0; font-weight: 400; }
+.calculator-results { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 22px 0; }
+.calculator-results > .card, .calculator-results > div, .calculator-results > article { padding: 20px 16px; background: #102637; border: 1px solid #355363; border-radius: 17px; margin-bottom: 0; }
+.calculator-results strong, .calculator-results b { display: block; font-size: 28px; letter-spacing: -.7px; font-weight: 600; margin: 10px 0 6px; color: #d0f2ed; font-variant-numeric: tabular-nums; }
+.calculator-results strong small, .calculator-results b small { font-size: 12px; letter-spacing: 0; font-weight: 400; color: #b9cbdc; }
+.calculator-results .eyebrow { color: #b4d8df; }
+.calculator-results p { margin: 8px 0 0; font-size: 12px; color: #b8c9dd; }
+.calculator-results > .primary { grid-column: 1 / -1; }
+.goal-progress { padding: 20px; background: #101e30; border: 1px solid #324c64; border-radius: 18px; margin: 20px 0; }
+.goal-progress .metric { margin-top: 9px; }
+.goal-progress progress { display: block; width: 100%; height: 7px; margin: 17px 0; appearance: none; -webkit-appearance: none; border: 0; border-radius: 8px; overflow: hidden; background: #35495f; }
+.goal-progress progress::-webkit-progress-bar { background: #35495f; }
+.goal-progress progress::-webkit-progress-value, .goal-progress progress::-moz-progress-bar { background: var(--accent); border-radius: 8px; }
+.whey-card { background: radial-gradient(ellipse at 100% 0%, #68598430, transparent 70%), linear-gradient(120deg, #202a40, #172336); border-color: #48516a; }
+.whey-card .eyebrow { color: #d1c2f1; }
+.whey-card h2 { margin-top: 10px; }
+.whey-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px; margin: 20px 0; }
+.whey-grid .field { margin-bottom: 0; }
+.week-controls { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 15px; border: 1px solid #334a63; border-radius: 18px; background: #142339; margin: 20px 0; }
+.week-controls > * { min-width: 0; }
+.week-controls > div { text-align: center; }
+.week-controls strong, .week-controls b { display: block; font-size: 14px; line-height: 1.5; }
+.week-controls .fine { display: block; margin: 4px 0 0; font-size: 11px; }
+.week-controls button { flex-shrink: 0; min-height: 44px; min-width: 44px; padding: 11px 13px; }
+.meal-slot-actions { display: flex; gap: 8px; flex-wrap: wrap; margin: 14px 0 0; padding-top: 14px; border-top: 1px solid #2d4158; }
+.meal-slot-actions > button, .meal-slot-actions > a { flex: 1; min-width: 44px; min-height: 44px; padding: 11px 12px; font-size: 12px; }
+.meal-slot-actions > select { flex: 1; min-width: 0; min-height: 44px; font-size: 14px; }
+.portion-controls { display: flex; align-items: center; gap: 8px; margin: 12px 0; }
+.portion-controls > * { min-width: 0; }
+.portion-controls button { min-width: 44px; min-height: 44px; padding: 10px; flex-shrink: 0; }
+.portion-controls input { min-height: 44px; padding: 10px 6px; text-align: center; }
+.portion-controls select { font-size: 14px; min-height: 44px; padding: 10px; }
+.portion-controls span, .portion-controls label { font-size: 12px; color: #bed0e4; margin: 0; line-height: 1.5; }
+.shopping-group { margin: 22px 0; }
+.shopping-group > h3, .shopping-group > h2 { font-size: 12px; text-transform: uppercase; letter-spacing: 1.1px; color: #b6d8df; margin: 0 0 12px; padding-bottom: 12px; border-bottom: 1px solid #33475f; }
+.shopping-group .check { padding: 5px 0; margin: 0; }
+.planner-summary { background: linear-gradient(120deg, #1b3444, #132335); border: 1px solid #3b5b6d; border-radius: 20px; padding: 22px; margin: 20px 0; }
+.planner-summary .eyebrow { color: #b7e6e4; }
+.planner-summary .metric { margin-top: 12px; }
+.planner-summary .row { align-items: center; flex-wrap: wrap; }
+.planner-summary .row > button { flex-shrink: 0; }
+nav:has(button:nth-child(6)) { max-width: 600px; gap: 2px; }
+nav:has(button:nth-child(6)) button { min-width: 44px; }
+@media (max-width: 600px) {
+  .goals-hero h2 { font-size: 28px; }
+  .goal-options { gap: 8px; margin: 18px 0; }
+  .goal-options > button, .goal-options > label { padding: 15px 10px; border-radius: 14px; min-height: 112px; font-size: 13px; }
+  .goal-options strong, .goal-options b { font-size: 14px; margin-bottom: 6px; }
+  .goal-options small, .goal-options .fine { font-size: 11px; line-height: 1.5; }
+  .goal-options svg { width: 21px; height: 21px; margin-bottom: 9px; }
+  .goal-profile-grid { gap: 15px 12px; }
+  .goal-profile-grid label { font-size: 11px; }
+  .calculator-results { gap: 8px; }
+  .calculator-results > .card, .calculator-results > div, .calculator-results > article { padding: 16px 10px; border-radius: 14px; }
+  .calculator-results strong, .calculator-results b { font-size: 22px; }
+  .calculator-results .eyebrow { font-size: 9px; letter-spacing: .7px; }
+  .calculator-results p { font-size: 11px; }
+  .goal-progress { padding: 17px; }
+  .whey-grid { gap: 14px 12px; }
+  .week-controls { gap: 8px; padding: 12px; }
+  .week-controls strong, .week-controls b { font-size: 12px; }
+  .week-controls button { padding: 10px; font-size: 12px; }
+  .planner-summary { padding: 20px; }
+  nav:has(button:nth-child(6)) button { font-size: 9px; padding: 8px 1px; }
+  nav:has(button:nth-child(6)) button svg { width: 20px; height: 20px; }
+}
+@media (min-width: 370px) and (max-width: 600px) {
+  .meal-slot-actions { gap: 6px; margin-top: 12px; padding-top: 12px; }
+  .meal-slot-actions > button, .meal-slot-actions > a { padding: 10px 7px; font-size: 11px; }
+  .portion-controls { flex-wrap: wrap; gap: 6px; }
+  .portion-controls > label, .portion-controls > span { flex-basis: 100%; font-size: 11px; }
+  .portion-controls input { flex: 1; width: 44px; }
+  .portion-controls select { flex: 1; width: 100%; font-size: 13px; }
+}
+@media (max-width: 369px) {
+  nav:has(button:nth-child(6)) { width: calc(100% - 16px); padding-left: 5px; padding-right: 5px; }
+  .goal-options { gap: 6px; }
+  .goal-options > button, .goal-options > label { padding: 13px 8px; }
+  .goal-options strong, .goal-options b { font-size: 13px; }
+  .calculator-results { grid-template-columns: minmax(0, 1fr); }
+  .calculator-results strong, .calculator-results b { font-size: 27px; }
+}
+.meal-illustration { height: 235px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 9px; background: radial-gradient(ellipse at 50% 45%, #415268, #202f43 75%); padding: 20px; color: #c3d1e1; }
+.meal-illustration svg { display: block; width: min(75%, 195px); height: 155px; }
+.meal-illustration > span { font-size: 10px; color: #c0d0e4; letter-spacing: .2px; }
+.macro-mini { display: flex; flex-wrap: wrap; gap: 9px; margin: 17px 0; }
+.macro-mini > span { display: block; padding: 9px 12px; border-radius: 10px; background: #102333; border: 1px solid #355365; color: #d5ecef; font-size: 12px; line-height: 1.5; }
+.macro-mini b, .macro-mini strong { color: #caf2eb; font-variant-numeric: tabular-nums; }
+.week-controls { flex-wrap: wrap; }
+.week-controls > div { flex: 1; }
+.shopping-group > summary { color: #c6e5e9; padding: 13px 0; border-bottom: 1px solid #33475f; font-size: 14px; }
+.shopping-group[open] > summary { margin-bottom: 12px; }
+.whey-calculator { background: radial-gradient(ellipse at 100% 0%, #68598430, transparent 70%), linear-gradient(120deg, #202a40, #172336); border-color: #48516a; }
+.whey-calculator .eyebrow { color: #d1c2f1; }
+.goal-progress progress::-webkit-progress-value { background: var(--accent); border-radius: 8px; }
+.goal-progress progress::-moz-progress-bar { background: var(--accent); border-radius: 8px; }
+@media (max-width: 600px) {
+  .week-controls > button:last-child:nth-child(4) { flex-basis: 100%; }
+  .macro-mini { gap: 7px; }
+  .macro-mini > span { font-size: 11px; padding: 8px 10px; }
+  .meal-illustration { height: 240px; }
+}
+@media (min-width: 370px) and (max-width: 600px) {
+  .meal-illustration { height: 145px; padding: 12px; gap: 5px; }
+  .meal-illustration svg { width: 100%; height: 105px; }
+  .meal-illustration > span { font-size: 8px; }
+  .meal-slot-actions > select { flex-basis: 100%; width: 100%; font-size: 12px; padding: 10px 5px; }
+  .meal-slot-actions > .portion-controls { width: 100%; margin: 0; }
+}
+/* Exact radio-card and four-target calculator contracts. */
+.goal-options > label { display: flex; flex-direction: column; gap: 12px; cursor: pointer; }
+.goal-options input[type=radio] { display: block; appearance: auto; -webkit-appearance: radio; width: 20px; height: 20px; min-height: 20px; padding: 0; border: 0; border-radius: 50%; margin: 0; background: transparent; accent-color: var(--accent); }
+.goal-options > label > span { display: block; min-width: 0; }
+.goal-options > label b { overflow-wrap: anywhere; }
+.goal-options > label:has(input:focus-visible) { outline: 3px solid var(--blue); outline-offset: 3px; }
+.goal-options > label:has(input:checked) small { color: #c5e5e3; }
+.calculator-results { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.calculator-results .metric { font-size: 28px; line-height: 1.35; margin: 10px 0 8px; color: #d0f2ed; }
+.goals-hero .row > .pill { white-space: normal; text-align: right; max-width: 68%; }
+.goal-progress .row { flex-wrap: wrap; }
+.goal-progress .row > span { font-size: 13px; color: #b9cce2; }
+.goal-progress .row > b { font-size: 14px; color: #c7eeea; }
+@media (max-width: 600px) {
+  .calculator-results { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .calculator-results > .card { padding: 17px 14px; }
+  .calculator-results .metric { font-size: 27px; }
+  .calculator-results .eyebrow { font-size: 10px; letter-spacing: 1px; }
+  .goal-options > label { gap: 11px; }
+  .goal-options > label input[type=radio] { width: 19px; height: 19px; min-height: 19px; }
+}
+/* Weekly planner: compact nutrition tiles and a reliable portion stepper. */
+.week-controls h2 { margin: 4px 0 0; font-size: 20px; white-space: nowrap; }
+.day-strip button > b { display: block; font-size: 17px; line-height: 1.3; margin-top: 6px; font-weight: 650; }
+.meal-tile-body > .row { align-items: baseline; gap: 6px; margin-bottom: 8px; }
+.meal-tile-body > .row > .fine { flex-shrink: 0; font-size: 11px; }
+.meal-slot-actions > label { flex-basis: 100%; margin: 0; font-size: 12px; }
+.meal-slot-actions > select { flex-basis: 100%; }
+.meal-slot-actions > .portion-controls { width: 100%; display: grid; grid-template-columns: 44px minmax(0, 1fr) 44px; gap: 7px; margin: 0; }
+.portion-controls > label { grid-column: 1 / -1; margin: 0 0 2px; }
+.portion-controls > input { width: 100%; min-width: 0; padding: 10px 2px; font-variant-numeric: tabular-nums; }
+.portion-controls > button { width: 44px; padding: 10px 0; }
+.meal-tile .macro-mini { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; }
+.meal-tile .macro-mini > span { min-width: 0; padding: 10px; font-size: 11px; line-height: 1.5; }
+.meal-tile .macro-mini b { display: block; font-size: 17px; letter-spacing: -.3px; line-height: 1.4; margin: 0 0 3px; color: #c8f1e9; }
+@media (max-width: 600px) {
+  .week-controls h2 { font-size: 18px; }
+  .week-controls .eyebrow { font-size: 9px; }
+}
+@media (min-width: 370px) and (max-width: 600px) {
+  .meal-tile .macro-mini { gap: 5px; margin: 13px 0; }
+  .meal-tile .macro-mini > span { padding: 8px 5px; font-size: 10px; }
+  .meal-tile .macro-mini b { font-size: 13px; margin: 0 0 2px; letter-spacing: -.15px; white-space: nowrap; }
+  .meal-slot-actions > .portion-controls { grid-template-columns: 44px minmax(0, 1fr) 44px; gap: 4px; }
+  .meal-tile-body > .row > .fine { font-size: 10px; }
+  .meal-slot-actions > label { font-size: 11px; }
+  .meal-tile details li { font-size: 12px; line-height: 1.6; }
+}

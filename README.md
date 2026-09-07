@@ -4,7 +4,7 @@ A standalone PWA for daily nutrition totals, weight, waist, steps, workouts, mea
 
 ## Use
 
-Open https://andreifcretu.github.io/cut-coach/ in iPhone Safari. Tap Share (or More then Share), Add to Home Screen, enable Open as Web App if shown, then Add. Install before you start logging. Visit Settings to edit targets.
+Open https://andreifcretu.github.io/cut-coach/ in iPhone Safari. Tap Share (or More then Share), Add to Home Screen, enable Open as Web App if shown, then Add. Install before you start logging. Open Goals to enter your body details, choose your goal and preview estimated targets. Apply them when ready; Settings also supports manual targets.
 
 Daily: morning weigh-in, log meals in Cal AI, manually copy the running totals here, update steps and workout, then mark final totals at bedtime. Saving replaces a day's totals, preventing duplicate imports. Review weekly averages on Progress. Sunday: review and prepare meals.
 
@@ -42,7 +42,7 @@ Each strength session includes warm-up, sets/reps/rest cues, two-frame photo-loo
 
 ## Media and sources
 
-Meal photos were generated for the four onion-free meals and are illustrative, not nutrition measurements. Exercise photo references are from https://github.com/yuhonas/free-exercise-db (public domain / Unlicense; see EXERCISE-LICENSE.md). Their start/end photo loops are not full-motion technique videos. Written cues were authored for this app; the source dataset instructions are not used as coaching prescriptions.
+Meal photos were generated for selected onion-free meals and are illustrative, not nutrition measurements. Exercise photo references are from https://github.com/yuhonas/free-exercise-db (public domain / Unlicense; see EXERCISE-LICENSE.md). Their start/end photo loops are not full-motion technique videos. Written cues were authored for this app; the source dataset instructions are not used as coaching prescriptions.
 
 General activity and running sources:
 - https://www.cdc.gov/physical-activity-basics/guidelines/adults.html
@@ -63,3 +63,21 @@ The interface now uses a black/navy palette with cyan actions, blue/lavender nut
 Train shows one exercise at a time. Previous/Next and the movement chooser save edited sets before switching. Invalid sets prevent navigation so edits can be corrected. Reopening starts with the first exercise that has incomplete target sets. Recovery checks and session settings remain accessible above the player; Finish session explicitly advances the training sequence.
 
 Design work was coordinated across a visual-system agent, workout-experience agent and local-model review agent, with integration and browser verification by the main agent. Three completed local Ollama review calls used downloaded qwen3.5:9b and qwen3.5:35b models. No model download or cloud-model call was used for those reviews. Model suggestions were reviewed against actual app behavior.
+
+## Goals, weekly menus and whey
+
+Goals stores age, height, current/starting/goal weight, training experience, equation selection, activity and goal preferences. Imperial and metric entry share canonical storage. Saving a profile does not change active nutrition targets. Preview and explicitly apply an estimate to update calories, protein, carbs and fat. Historical nutrition snapshots are retained. An optional seven-day mean uses at least three recent weigh-ins; it never silently applies new targets.
+
+The calculator uses Mifflin–St Jeor, an activity multiplier and an adjustable goal offset. Protein options are 1.4–2.0 g/kg, fat about 30% of energy and carbohydrate the remainder. These are starting estimates for generally healthy adults, not individually measured needs. The app bounds its calculator to ages 19–78, BMI 18.5–40 and results of 1500–5000 kcal; these implementation limits are not personal safety thresholds. Missing inputs, implausible combinations and conflicting goal weights do not produce recommendations. It is not designed for pregnancy or breastfeeding.
+
+Meals offers 24 onion-free recipes across breakfast, lunch, dinner and snacks. Navigate days and weeks, swap dishes, and adjust portions from 0.5 to 3 in quarter steps. Macro estimates and the weekly grocery list follow those choices. Shopping checks persist per week and changed quantities become unchecked. Recipes use explicit ingredient quantities with generic macro estimates; they are flexible menus, not a promise to meet every target. Actual consumption is logged separately.
+
+Enter the whey package's powder weight, calories, protein, carbs and fat in Goals. Meals then scales that exact label for your chosen serving fraction and shows the selected menu's protein gap. Scoops are not assumed to have a universal size. Whey is optional, separate from menus and never automatically logged. Other shake ingredients must be logged separately.
+
+Profiles, whey labels, dated swaps, portions and shopping checks are included in JSON backup/restore. All remain on the current device/browser. A downloaded local qwen3.5:9b model reviewed the personalization UX; the calculator and planner use deterministic code, not runtime AI.
+
+References:
+- https://pubmed.ncbi.nlm.nih.gov/2305711/
+- https://pmc.ncbi.nlm.nih.gov/articles/PMC5477153/
+- https://www.niddk.nih.gov/health-information/weight-management/body-weight-planner
+- https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures
