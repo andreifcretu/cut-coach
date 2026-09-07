@@ -55,3 +55,11 @@ All images are bundled locally and cached for offline access. No third-party ima
 Save check-in persists the date's calories, protein, carbs, fat and activity. Today shows the three-macro breakdown and above/remaining calorie feedback. Progress includes weekly macro averages, data-based feedback and paginated history for every saved date. Historical calorie/protein comparisons use the target captured with that day's nutrition entry. Older entries without a target snapshot remain available but are excluded from historical target comparisons. Optional carb/fat targets can be set in Settings. Goal changes are user-reviewed; feedback updates automatically but calorie targets never silently change.
 
 Storage remains local to the device/browser; it is not cloud sync. Use Export backup for a separate copy. Clearing website data or losing the device can remove local entries.
+
+## Midnight interface update
+
+The interface now uses a black/navy palette with cyan actions, blue/lavender nutrition accents, a consolidated calorie-and-macro dashboard, and photo-led meal cards. Menu browsing is separate from prep and groceries. Secondary reports, settings and guidance remain available through disclosures.
+
+Train shows one exercise at a time. Previous/Next and the movement chooser save edited sets before switching. Invalid sets prevent navigation so edits can be corrected. Reopening starts with the first exercise that has incomplete target sets. Recovery checks and session settings remain accessible above the player; Finish session explicitly advances the training sequence.
+
+Design work was coordinated across a visual-system agent, workout-experience agent and local-model review agent, with integration and browser verification by the main agent. Three completed local Ollama review calls used downloaded qwen3.5:9b and qwen3.5:35b models. No model download or cloud-model call was used for those reviews. Model suggestions were reviewed against actual app behavior.
