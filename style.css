@@ -229,11 +229,13 @@ li { margin: 9px 0; }
 .macro-energy .protein { background: var(--accent); }
 .macro-energy .carbs { background: var(--blue); }
 .macro-energy .fat { background: var(--lavender); }
-.chart { width: 100%; height: 200px; margin-top: 14px; }
+.chart { display: block; width: 100%; height: auto; aspect-ratio: 600 / 180; margin-top: 14px; }
 .chart path { stroke: #324258; }
 .chart polyline { stroke: var(--accent); stroke-width: 3; }
 .chart circle { fill: var(--accent); }
-.chart text { fill: #a4b2c7; }
+.chart text { fill: #a4b2c7; font-variant-numeric: tabular-nums; }
+.chart .goal-line { stroke: var(--lavender); stroke-width: 2; stroke-dasharray: 6 5; opacity: .75; }
+.chart .goal-label { fill: var(--lavender); }
 .photo { max-width: 100%; max-height: 240px; border-radius: 14px; margin-top: 10px; }
 table { width: 100%; border-collapse: collapse; font-size: 12px; font-variant-numeric: tabular-nums; }
 td, th { text-align: left; padding: 14px 8px; border-bottom: 1px solid var(--line); white-space: nowrap; }
@@ -604,3 +606,24 @@ nav:has(button:nth-child(6)) button { min-width: 44px; }
 /* Food capture and diary: one clear action, followed by an editable review. */
 .food-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:20px 0 24px}.food-actions button{border:1px solid #314255;border-radius:22px;padding:16px 8px;display:flex;flex-direction:column;align-items:center;gap:6px;background:linear-gradient(145deg,#1b3040,#142133);color:#edf7fa;min-height:114px}.food-actions button:first-child{background:linear-gradient(135deg,#bce8e3,#93c4d0);color:#102a35;border-color:#bce8e3}.food-actions span{font-size:29px;line-height:1}.food-actions b{font-size:15px}.food-actions small{font-size:11px;color:inherit;opacity:.8}.food-actions button:hover{transform:translateY(-2px)}.quick-foods{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}.quick-foods button{font-size:12px}.diary-card .food-actions{margin-top:12px}.diary-empty{padding:22px 4px;border-top:1px solid var(--line,#293749)}.diary-empty b{font-size:19px}.diary-empty p{color:#a9bacb;line-height:1.6}.food-entry{display:grid;grid-template-columns:48px 1fr;gap:12px;padding:20px 0;border-bottom:1px solid #2a374a}.food-entry time{font-size:12px;color:#a9bacb;padding-top:3px}.food-entry h3{font-size:17px;margin:0 0 8px;overflow-wrap:anywhere}.food-entry p{font-size:13px;margin:0 0 6px;color:#c5d2dc}.food-entry small{font-size:12px;color:#a9bacb}.food-row-actions{display:flex;gap:15px;margin-top:6px}.text-action{border:0;background:none;color:#bce8e3;padding:10px 4px;min-height:44px;font-size:13px;text-align:left}.food-chips{display:flex;gap:8px;overflow-x:auto;padding:12px 0}.food-chips button{min-width:160px;max-width:220px;text-align:left;white-space:normal}.food-chips small{display:block;font-size:11px;margin-top:8px;color:#a9bacb}.food-dialog{box-sizing:border-box;width:min(580px,calc(100vw - 20px));max-height:90dvh;max-height:90vh;overflow-y:auto;border:1px solid #354457;border-radius:28px;background:#101b2b;color:#edf4f8;padding:24px;margin:auto;box-shadow:0 25px 100px #0008}.food-dialog::backdrop{background:rgba(2,8,18,.82);backdrop-filter:blur(8px)}.food-dialog-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}.food-dialog-head button{padding:8px 14px;min-width:44px}.food-dialog h2{font-size:30px;line-height:1.1;letter-spacing:-.9px;margin:8px 0 14px}.food-dialog p{line-height:1.6}.food-dialog .grid{gap:12px}.food-dialog .field{min-width:0}.food-dialog input,.food-dialog select{box-sizing:border-box;max-width:100%;font-size:16px}.food-dialog .fine{font-size:12px;color:#aebfcf}.food-dialog label{display:block;margin:12px 0 8px;font-size:12px;color:#b9c9d7}.food-review-item{margin:20px 0;padding:20px 0;border-top:1px solid #354457}.food-amount-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.food-save{position:sticky;bottom:0;box-shadow:0 -8px 25px #101b2b}.food-error{color:#ffd3bf;font-size:14px;overflow-wrap:anywhere}.food-error:empty{display:none}.food-preview{width:100%;height:220px;object-fit:contain;background:#091221;border-radius:18px;margin:14px 0}.photo-picks{display:grid;grid-template-columns:1fr 1fr;gap:12px}.file-pick{display:flex!important;align-items:center;justify-content:center;min-height:48px;cursor:pointer;border-radius:14px;font-size:14px!important;text-align:center;padding:12px;box-sizing:border-box}.food-dialog .file-pick.primary{color:#09222a}.visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}.visually-hidden:focus{position:static!important;width:auto!important;height:auto!important;clip:auto!important}.barcode-stage{position:relative;aspect-ratio:1.5;background:#080f1d;border-radius:20px;overflow:hidden;margin:20px 0}.barcode-stage video{width:100%;height:100%;object-fit:cover}.scan-frame{position:absolute;inset:30% 12%;border:2px solid #bce8e3;border-radius:10px;pointer-events:none;box-shadow:0 0 0 100px #07101a40}.meal-log-button{font-size:12px;margin:14px 0 4px;padding:12px 4px}.food-dialog details{margin:18px 0}.food-dialog .notice{font-size:13px}.food-dialog .row{gap:10px}.food-dialog select{width:100%}.food-dialog button:disabled{opacity:.55;cursor:wait}#food-analyze{margin-top:18px}#food-dialog :focus-visible{outline:3px solid #a2dce7;outline-offset:3px}@media(max-width:420px){.food-actions{gap:7px}.food-actions button{padding:15px 4px;border-radius:18px}.food-actions small{font-size:10px}.food-dialog{padding:18px;border-radius:23px}.food-dialog h2{font-size:26px}.food-dialog .grid{grid-template-columns:1fr 1fr}.food-entry{gap:8px;grid-template-columns:42px 1fr}.food-dialog input[type=date],.food-dialog input[type=time]{min-width:0;width:100%}.food-dialog .food-preview{height:180px}}@media(prefers-reduced-motion:reduce){.food-actions button:hover{transform:none}}
 .diary-totals{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:-6px 0 22px}.diary-totals span{padding:12px 5px;border-radius:14px;background:#203041;text-align:center;min-width:0}.diary-totals b{display:block;font-size:21px}.diary-totals small{display:block;font-size:10px;color:#adc0cf;margin-top:4px}
+
+/* Rest timer: sits just above the bottom navigation, outside #app. */
+.rest-bar { position: fixed; bottom: 92px; left: 50%; transform: translateX(-50%); width: min(550px, calc(100% - 32px)); z-index: 8; background: #142135f2; border: 1px solid #3d5069; border-radius: 20px; padding: 14px 16px 12px; box-shadow: 0 12px 44px #0009; backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px 12px; align-items: center; }
+.rest-bar .rest-copy { min-width: 0; }
+.rest-bar .eyebrow { display: block; color: var(--accent); margin-bottom: 2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rest-bar b { font-size: 30px; line-height: 1.1; letter-spacing: -1px; font-variant-numeric: tabular-nums; }
+.rest-bar .rest-buttons { display: flex; gap: 8px; }
+.rest-bar .rest-buttons button { min-height: 44px; padding: 10px 14px; font-size: 13px; }
+.rest-bar .rest-track { grid-column: 1 / -1; height: 5px; border-radius: 3px; background: #23364c; overflow: hidden; }
+.rest-bar .rest-track i { display: block; height: 100%; border-radius: 3px; background: var(--accent); transition: width .25s linear; }
+.rest-bar.is-done { border-color: #6fcfc4; }
+.rest-bar.is-done b, .rest-bar.is-done .eyebrow { color: #c2f7ed; }
+.rest-bar.is-done .rest-track i { background: #6fcfc4; }
+@media (max-width: 380px) {
+  .rest-bar { padding: 12px 13px 10px; }
+  .rest-bar b { font-size: 26px; }
+  .rest-bar .rest-buttons button { padding: 10px 11px; font-size: 12px; }
+}
+body.resting #toast { bottom: 205px; }
+body.resting main { padding-bottom: 245px; }
+@media (prefers-reduced-motion: reduce) { .rest-bar .rest-track i { transition: none; } }
