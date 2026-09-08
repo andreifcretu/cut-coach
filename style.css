@@ -627,3 +627,7 @@ nav:has(button:nth-child(6)) button { min-width: 44px; }
 body.resting #toast { bottom: 205px; }
 body.resting main { padding-bottom: 245px; }
 @media (prefers-reduced-motion: reduce) { .rest-bar .rest-track i { transition: none; } }
+
+.backup-reminder { margin-bottom: 20px; }
+.backup-reminder b { display: block; margin-bottom: 6px; }
+.backup-reminder p { margin: 0; font-size: 13px; }
