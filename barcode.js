@@ -1,4 +1,7 @@
-/* Cut Coach barcode helpers. Requires the locally served ZXingBrowser UMD bundle. */
+/* Cut Coach barcode helpers. Loads the locally served ZXingBrowser UMD bundle on
+   first use: it is ~109 KB gzipped, far larger than the rest of the app, and most
+   visits never open the scanner. It stays in the service-worker precache, so the
+   on-demand load is served from cache and works offline. */
 (function (global) {
   'use strict';
 
@@ -149,6 +152,25 @@
     }
   }
 
+  var zxingLoad = null;
+  function zxingReady() {
+    if (global.ZXingBrowser && typeof global.ZXingBrowser.BrowserMultiFormatReader === 'function') return Promise.resolve();
+    if (!global.document || typeof global.document.createElement !== 'function') return Promise.resolve();
+    if (zxingLoad) return zxingLoad;
+    zxingLoad = new Promise(function (resolve, reject) {
+      var el = global.document.createElement('script');
+      el.src = './vendor/zxing-browser-0.2.1.min.js';
+      el.async = true;
+      el.onload = function () { resolve(); };
+      el.onerror = function () {
+        zxingLoad = null;
+        reject(error('The barcode scanner could not load. Check your connection and try again.', 'SCANNER_UNAVAILABLE'));
+      };
+      (global.document.head || global.document.body).appendChild(el);
+    });
+    return zxingLoad;
+  }
+
   function zxingReader() {
     if (!global.ZXingBrowser || typeof global.ZXingBrowser.BrowserMultiFormatReader !== 'function') {
       throw error('The bundled barcode scanner is unavailable. Reload the app and try again.', 'SCANNER_UNAVAILABLE');
@@ -192,6 +214,7 @@
       }
     };
     try {
+      await zxingReady();
       reader = zxingReader();
       controls = await reader.decodeFromConstraints(
         { audio: false, video: { facingMode: { ideal: 'environment' }, width: { ideal: 1280 }, height: { ideal: 720 } } },
@@ -219,6 +242,7 @@
     if (!file || typeof global.URL === 'undefined' || typeof global.URL.createObjectURL !== 'function') {
       throw error('Choose an image file to scan.', 'INVALID_IMAGE');
     }
+    await zxingReady();
     var reader = zxingReader();
     var objectUrl = global.URL.createObjectURL(file);
     try {
